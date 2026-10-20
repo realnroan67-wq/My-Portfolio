@@ -1,0 +1,18 @@
+{
+    "name":  "it-student-portfolio",
+    "version":  "1.0.0",
+    "private":  true,
+    "scripts":  {
+                    "dev":  "concurrently \"npm:css:watch\" \"npm:serve\"",
+                    "css:watch":  "node ./node_modules/@tailwindcss/cli/dist/index.mjs -i ./src/input.css -o ./dist/styles.css --watch",
+                    "css:build":  "node ./node_modules/@tailwindcss/cli/dist/index.mjs -i ./src/input.css -o ./dist/styles.css --minify",
+                    "serve":  "live-server --port=3000 --open=index.html",
+                    "build":  "npm run css:build \u0026\u0026 node ./scripts/package-site.mjs"
+                },
+    "devDependencies":  {
+                            "@tailwindcss/cli":  "^4.1.0",
+                            "concurrently":  "^9.1.2",
+                            "live-server":  "^1.2.2",
+                            "tailwindcss":  "^4.1.0"
+                        }
+}
